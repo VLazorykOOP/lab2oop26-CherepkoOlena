@@ -107,13 +107,13 @@ void task2()
 void task3() {
  union EncryptedChar {
     struct {
-        uint16_t row    : 2; // Біти 0-1: номер рядка (2 біти)
-        uint16_t pos    : 5; // Біти 2-6: позиція в рядку (5 біт)
-        uint16_t ascii  : 8; // Біти 7-14: ASCII-код символу (8 біт)
-        uint16_t parity : 1; // Біт 15: біт парності (1 біт)
+        uint16_t row    : 2;
+        uint16_t pos    : 5;
+        uint16_t ascii  : 8;
+        uint16_t parity : 1;
     } bits;
 
-    uint16_t full_value; // Змінна для доступу до всіх 16 бітів одночасно
+    uint16_t full_value;
 };
 
     std::string lines[4] = {
@@ -134,9 +134,9 @@ void task3() {
 
         for (int pos = 0; pos < 32; ++pos) {
             EncryptedChar data;
-            data.full_value = 0; // Очищуємо пам'ять перед записом
+            data.full_value = 0;
 
-            // Записуємо дані у відповідні бітові поля
+
             data.bits.row = row;
             data.bits.pos = pos;
             data.bits.ascii = lines[row][pos];
