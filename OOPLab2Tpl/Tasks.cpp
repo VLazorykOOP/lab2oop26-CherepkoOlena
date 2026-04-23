@@ -66,7 +66,7 @@ void task2()
             lines[row] = lines[row].substr(0, 32);
         }
 
-        std::cout << "Рядок " << row << " (" << lines[row] << "):\n";
+        std::cout << "Row " << row << " (" << lines[row] << "):\n";
 
         for (int pos = 0; pos < 32; ++pos) {
             char c = lines[row][pos];
@@ -130,7 +130,7 @@ void task3() {
         while (lines[row].length() < 32) lines[row] += ' ';
         if (lines[row].length() > 32) lines[row] = lines[row].substr(0, 32);
 
-        std::cout << "Рядок " << row << ":\n";
+        std::cout << "Row " << row << ":\n";
 
         for (int pos = 0; pos < 32; ++pos) {
             EncryptedChar data;
