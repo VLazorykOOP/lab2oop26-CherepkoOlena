@@ -11,27 +11,20 @@ using namespace std;
 /// @return 
 int main()
 {
-    cout << "OOP. Template for laboratory work #2.\n";
+    cout << "OOP. Laboratory work #2.\n";
 
-    char ch = '5';
-    do {
-        system("cls");
-        MenuTask();
-        ch = cin.get();
-        
-        cin.get();
+    int task = 0;
+    MenuTask();
 
-        switch (ch) {
-        case '1': task1();   break;
-        case '2': task1();   break;
-        case '3': task1();   break;
-        case '4': task1();   break;
-		case '5':  Examples(); break;
-		case '6': return 0;
-	    }
-        cout << " Press any key and enter\n";
-        ch = cin.get();
-    } while (ch != '6');
+    cout << "Choose task:" << endl;
+    cin >> task;
+
+    if (task == 1)
+        task1();
+    if (task == 2)
+        task2();
+    if (task == 3)
+        cout << "Exited!";
 
     return 0;
 }
