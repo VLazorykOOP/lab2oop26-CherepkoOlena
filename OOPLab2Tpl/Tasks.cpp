@@ -12,7 +12,8 @@ void MenuTask()
     cout << "     Menu Task   \n";
     cout << "    1.  Calculation of expressions using bitwise operations  \n";
     cout << "    2.  Data encryption using bitwise operations \n";
-    cout << "    3.  Exit \n";
+    cout << "    3.  Data encryption using structures with bit fields \n";
+    cout << "    4.  Exit \n";
 }
 void task1() {
 
@@ -82,7 +83,7 @@ void task2()
             // Біти 7-14: ASCII-код (8 біт, маска 0xFF або 255), зсуваємо на 7 біт вліво
             encrypted_char |= ((c & 255) << 7);
 
-            // Рахуємо кількість одиниць у вже сформованих 15 бітах
+
             int ones_count = 0;
             for (int i = 0; i < 15; ++i) {
                 if ((encrypted_char >> i) & 1) {
@@ -124,8 +125,6 @@ void task3() {
 
     EncryptedChar encrypted_text[4][32];
 
-    std::cout << "Результат шифрування\n\n";
-
     for (int row = 0; row < 4; ++row) {
 
         while (lines[row].length() < 32) lines[row] += ' ';
@@ -142,7 +141,6 @@ void task3() {
             data.bits.pos = pos;
             data.bits.ascii = lines[row][pos];
 
-            // Перевіряємо перші 15 бітів через full_value
             int ones_count = 0;
             for (int i = 0; i < 15; ++i) {
                 if ((data.full_value >> i) & 1) {
@@ -150,7 +148,6 @@ void task3() {
                 }
             }
 
-            // Встановлюємо значення бітового поля parity
             if (ones_count % 2 != 0) {
                 data.bits.parity = 1;
             } else {

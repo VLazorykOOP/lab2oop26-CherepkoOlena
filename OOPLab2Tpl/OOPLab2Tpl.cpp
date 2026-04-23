@@ -24,6 +24,8 @@ int main()
     if (task == 2)
         task2();
     if (task == 3)
+        task3();
+    if (task == 4)
         cout << "Exited!";
 
     return 0;
